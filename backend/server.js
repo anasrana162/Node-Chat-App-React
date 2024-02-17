@@ -2,8 +2,13 @@
 require("dotenv").config();
 const cookieParser = require("cookie-parser");
 const express = require("express");
+
+
 const authRoutes = require('./routes/authroutes');
 const messageRoutes = require('./routes/messageroutes');
+const userRoutes = require('./routes/userroutes');
+
+
 
 const connectDB = require('./db/connect');
 
@@ -17,6 +22,7 @@ app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.use("/api/users", userRoutes);
 
 // app.get('/', (req, res) => {
 //     // root route http://localhost:5000/
